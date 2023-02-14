@@ -1,0 +1,406 @@
+/* normalize */
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* typography ==============================================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+#instruction-button,
+#close-modal {
+  font-family: "DM Serif Display", serif;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 0.6rem;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: calc(0.8rem + 2vw);
+  font-family: sans-serif;
+  margin: 2rem;
+}
+
+p {
+  margin: 0;
+}
+
+li {
+  text-align: left;
+}
+
+.guess-text {
+  color: #ffa500;
+}
+
+/* buttons & inputs ====================================================*/
+button,
+#instruction-button,
+#close-modal {
+  border-radius: 10px;
+  background-color: #ffd700;
+  border: none;
+  font-size: 1.8rem;
+  height: 4rem;
+  width: 10rem;
+  margin: 0 auto;
+}
+
+#quit,
+#back,
+#instruction-button {
+  margin: 3rem auto;
+  color: #ffffff;
+  background-color: #008000;
+  outline: 4px solid #ffd700;
+  display: block;
+}
+
+#start,
+#enter {
+  width: 6rem;
+}
+
+#back {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#close-modal {
+  color: #ffffff;
+  background-color: #67484d;
+  outline: 4px solid #ec00ec;
+}
+
+input[type="text"] {
+  width: 20rem;
+  height: 4rem;
+  margin: 0.5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  line-height: 1;
+  border-radius: 10px;
+  border: none;
+}
+
+/* level choice button styling -------------*/
+#levelchoice {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  width: 48rem;
+  height: 5rem;
+  border-radius: 9999px;
+  box-shadow: inset 0.5px 0.5px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* easy medium hard buttons styling */
+#levelchoice label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  font-size: 3rem;
+  width: 15rem;
+  height: 4.2rem;
+  text-align: center;
+  border-radius: 9999px;
+  overflow: hidden;
+  color: none;
+  transition: linear 0.3s;
+  cursor: pointer;
+}
+
+/* radio button styling */
+input[type="radio"] {
+  appearance: none;
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #fc5e24;
+  color: black;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+/* other ================================================================== */
+/* screens  -------------------------*/
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #4457e2, #a70d0d);
+}
+
+#splash,
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* splash screen  ----------------------*/
+#splash {
+  animation: gradient 8s linear infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* modal */
+#how-to-play {
+  font-size: 3rem;
+  color: #ec477e;
+}
+
+#instruction {
+  color: black;
+  font-family: serif;
+  text-align: left;
+}
+
+#choose,
+#playername {
+  font-size: 1.6rem;
+  color: #ff00ff;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* game screen  -------------------------*/
+.player-info {
+  align-self: flex-end;
+  text-align: left;
+  margin-right: 2rem;
+}
+
+#player {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin: 0 0.5rem 0 1rem;
+}
+
+#alert1,
+#alert2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ff0000;
+}
+
+#hiorlow {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin: 1rem;
+  height: 3rem;
+}
+
+span#last {
+  font-weight: bold;
+  padding: 0.2rem 1rem;
+}
+
+/* gameover screen ------------------------ */
+.message {
+  font-size: 4rem;
+  font-family: "DM Serif Display", serif;
+  font-weight: 900;
+  color: #ffffff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin: auto;
+}
+
+#lose .message {
+  top: 30%;
+  left: 50%;
+}
+
+#win .message {
+  top: 45%;
+  left: 50%;
+}
+
+#answer {
+  color: #ff00ff;
+  text-shadow: 2px 2px 0 lightgray;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* media queries ============================================================= */
+/* smaller PC & tablet */
+@media (max-width: 62.5em) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .radio_container {
+    width: 70vw;
+    height: 4rem;
+  }
+
+  #levelchoice label {
+    font-size: calc(4vw);
+    width: 20vw;
+    height: 3rem;
+  }
+
+  .message {
+    font-size: calc(1.5rem + 3vw);
+    line-height: 4rem;
+  }
+}
+
+@media (max-width: 31.25em) {
+  .message {
+    font-size: calc(1rem + 3vw);
+    line-height: 3rem;
+  }
+}
+
+/* mobile size */
+@media (max-width: 28em) {
+  /* fonts */
+  body {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  /* buttons sizing */
+  button,
+  #quit,
+  #back,
+  #close-modal,
+  #instruction-button {
+    font-size: 1.5rem;
+    height: 3rem;
+    width: 8.5rem;
+  }
+
+  /* splash screen */
+  #levelchoice {
+    margin-bottom: 0;
+  }
+
+  input[type="text"] {
+    font-size: 2rem;
+    width: 15rem;
+    height: 3.5rem;
+  }
+
+  /* make the number input narrower */
+  input#guess {
+    width: 10rem;
+  }
+
+  .radio_container {
+    width: 20rem;
+    height: 3rem;
+  }
+
+  #levelchoice label {
+    font-size: 1.4rem;
+    width: 6rem;
+    height: 2.5rem;
+  }
+
+  #choose,
+  #playername {
+    font-size: 1.5rem;
+  }
+
+  /* game screen */
+  .player-info {
+    font-size: 1.2rem;
+  }
+
+  #player {
+    font-size: 2.8rem;
+    margin: 1rem 0;
+  }
+
+  #alert1,
+  #alert2 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  #hiorlow {
+    font-size: 1.5rem;
+  }
+}
